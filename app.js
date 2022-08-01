@@ -70,3 +70,12 @@ inputs.forEach((input) => {
     localStorage.setItem('newBook', JSON.stringify(newBook));
   })
 })
+
+// removeFunction
+function removeItem(index){
+  removeBtns.forEach(element=>{
+    element.addEventListener('click',()=>{
+   
+    })
+  });
+}
