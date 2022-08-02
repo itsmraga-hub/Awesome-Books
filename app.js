@@ -59,20 +59,6 @@ addBtn.addEventListener('click', (e) => {
 
 getBooksFromStorage();
 
-// Store the inputs to Local storage
-// const inputs = [title, author];
-// inputs.forEach((input) => {
-//   input.addEventListener('input', () => {
-//     const bTitle = title.value;
-//     const bAuthor = author.value;
-//     const newBook = {
-//       title: bTitle,
-//       author: bAuthor,
-//     };
-//     localStorage.setItem('newBook', JSON.stringify(newBook));
-//   });
-// });
-
 const removeBtns = document.querySelectorAll('.btnRemove');
 removeBtns.forEach((removeBtn, i) => {
   removeBtn.addEventListener('click', () => {
