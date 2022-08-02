@@ -4,7 +4,6 @@ const author = document.querySelector('.author');
 const addBtn = document.querySelector('.add-btn');
 let i = 0;
 
-// const books = [];
 let myLibrary = [];
 
 function showBooks(i) {
@@ -71,10 +70,8 @@ inputs.forEach((input) => {
 const removeBtns = document.querySelectorAll('[data-remove]');
 removeBtns.forEach((removeBtn, i) => {
   removeBtn.addEventListener('click', () => {
-    // const id = removeBtn.getAttribute('data-id');
-    // console.log(id);
     myLibrary.splice(i, 1);
-    removeBtn.parentElement.remove();
     localStorage.setItem('book', JSON.stringify(myLibrary));
+    setTimeout(window.location.reload(), 1000);
   });
 });
