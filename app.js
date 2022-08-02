@@ -9,10 +9,33 @@ const books = [];
 function showBooks(b) {
   const div = document.createElement('div');
   div.className = 'book';
-  div.innerHTML += `<p>${b.title}</p>
-  <p>${b.author}</p>
+  div.innerHTML += `<p>"${b.title}" by ${b.author}</p>
   <button class="btnRemove">Remove</button>`;
   bookContainer.appendChild(div);
+}
+
+// Refactor using classes
+class Book {
+  constructor(bookTitle, bookAuthor) {
+    this.title = bookTitle;
+    this.author = bookAuthor;
+  }
+
+  SetBook() {
+    books.push(this);
+    showBooks(this);
+    setTimeout(window.location.reload(), 2000);
+    localStorage.setItem('book', JSON.stringify(books));
+    title.value = '';
+    author.value = '';
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  removeBook(books, index) {
+    books.splice(index, 1);
+    localStorage.setItem('book', JSON.stringify(books));
+    setTimeout(window.location.reload(), 2000);
+  }
 }
 
 const getBooksFromStorage = () => {
@@ -26,35 +49,11 @@ const getBooksFromStorage = () => {
   }
 };
 
-// for (i = 0; i < myLibrary.length; i += 1) {
-//   showBooks(i);
-// }
-
-function createBook(bookTitle, bookAuthor) {
-  const book = {
-    title: bookTitle,
-    author: bookAuthor,
-  };
-  return book;
-}
-
-// function add(btitle, bauthor) {
-//   const b = createBook(btitle, bauthor);
-//   myLibrary.push(b);
-// }
-
 // Event listener for add button
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  const bookT = title.value;
-  const bookA = author.value;
-  const b = createBook(bookT, bookA);
-  books.push(b);
-  showBooks(b);
-  setTimeout(window.location.reload(), 2000);
-  localStorage.setItem('book', JSON.stringify(books));
-  title.value = '';
-  author.value = '';
+  const bk = new Book(title.value, author.value);
+  bk.SetBook();
 });
 
 getBooksFromStorage();
@@ -62,8 +61,7 @@ getBooksFromStorage();
 const removeBtns = document.querySelectorAll('.btnRemove');
 removeBtns.forEach((removeBtn, i) => {
   removeBtn.addEventListener('click', () => {
-    books.splice(i, 1);
-    localStorage.setItem('book', JSON.stringify(books));
-    setTimeout(window.location.reload(), 2000);
+    const bk = new Book();
+    bk.removeBook(books, i);
   });
 });

@@ -18,7 +18,7 @@ body {
 }
 
 .container {
-  width: max-content;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -34,12 +34,20 @@ body {
   width: 100%;
   height: auto;
   margin-bottom: 1em;
+  border: 2px solid black;
 }
 
 .book {
+  width: 100%;
   border-bottom: 2px solid black;
-  padding: 0.5em 0;
+  padding: 0.5em 0.25em;
   font-size: 1.2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.book:nth-of-type(odd) {
+  background-color: #aaa;
 }
 
 .btn {
@@ -51,6 +59,7 @@ form {
   flex-direction: column;
   justify-content: center;
   width: min-content;
+  margin: 0 auto;
   gap: 0.5em;
 }
 
@@ -61,4 +70,5 @@ input[type="text"] {
 input[type="submit"] {
   width: max-content;
   padding: 0.5rem;
+  align-self: flex-end;
 }
