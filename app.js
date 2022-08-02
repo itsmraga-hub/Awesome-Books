@@ -9,8 +9,7 @@ const books = [];
 function showBooks(b) {
   const div = document.createElement('div');
   div.className = 'book';
-  div.innerHTML += `<p>${b.title}</p>
-  <p>${b.author}</p>
+  div.innerHTML += `<p>"${b.title}" by ${b.author}</p>
   <button class="btnRemove">Remove</button>`;
   bookContainer.appendChild(div);
 }
@@ -26,10 +25,6 @@ const getBooksFromStorage = () => {
   }
 };
 
-// for (i = 0; i < myLibrary.length; i += 1) {
-//   showBooks(i);
-// }
-
 function createBook(bookTitle, bookAuthor) {
   const book = {
     title: bookTitle,
@@ -38,14 +33,7 @@ function createBook(bookTitle, bookAuthor) {
   return book;
 }
 
-// function add(btitle, bauthor) {
-//   const b = createBook(btitle, bauthor);
-//   myLibrary.push(b);
-// }
-
-// Event listener for add button
-addBtn.addEventListener('click', (e) => {
-  e.preventDefault();
+function add() {
   const bookT = title.value;
   const bookA = author.value;
   const b = createBook(bookT, bookA);
@@ -55,15 +43,25 @@ addBtn.addEventListener('click', (e) => {
   localStorage.setItem('book', JSON.stringify(books));
   title.value = '';
   author.value = '';
+}
+
+// Event listener for add button
+addBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  add();
 });
 
 getBooksFromStorage();
 
+function remove(books, i) {
+  books.splice(i, 1);
+  localStorage.setItem('book', JSON.stringify(books));
+  setTimeout(window.location.reload(), 2000);
+}
+
 const removeBtns = document.querySelectorAll('.btnRemove');
 removeBtns.forEach((removeBtn, i) => {
   removeBtn.addEventListener('click', () => {
-    books.splice(i, 1);
-    localStorage.setItem('book', JSON.stringify(books));
-    setTimeout(window.location.reload(), 2000);
+    remove(books, i);
   });
 });
