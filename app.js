@@ -38,6 +38,7 @@ class Book {
   }
 }
 
+// Function to get and load books from storage
 const getBooksFromStorage = () => {
   const localData = localStorage.getItem('book');
   myLibrary = JSON.parse(localData);
@@ -65,3 +66,10 @@ removeBtns.forEach((removeBtn, i) => {
     bk.removeBook(books, i);
   });
 });
+
+// Get date and print it to browser window
+const date = document.querySelector('.date');
+const time = new Date();
+date.innerHTML = time;
+
+// Get list items and containers to display at separate times
