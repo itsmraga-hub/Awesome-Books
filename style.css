@@ -8,13 +8,67 @@ body {
   font-size: 62.5%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  height: 100vh;
+}
+
+.header-container {
+  width: 100%;
+  font-size: 1.5em;
+  color: rgba(0, 0, 0, 1);
+}
+
+.header-container .container--div {
+  width: 100%;
+  height: 30px;
+  background-color: #aaa;
+  padding: 0 2.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-container .container--div ul {
+  display: flex;
+  list-style: none;
+}
+
+.header-container .container--div ul li {
+  padding: 0 1em;
+  border-right: 1px solid #aabbff;
+}
+
+.header-container .container--div ul li a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+}
+
+.header-container .container--div ul li:nth-child(3) {
+  border-right: none;
+}
+
+.date {
+  padding: 0.1em 2em;
+  text-align: end;
+}
+
+.btnRemove {
+  padding: 0.1em 1em;
 }
 
 .main-container {
   width: 100%;
   padding: 2em;
+  display: block;
+}
+
+.main-container.active {
+  display: block;
+}
+
+.active {
+  display: block;
 }
 
 .container {
@@ -32,15 +86,13 @@ body {
   font-size: 2em;
   display: block;
   width: 100%;
-  height: auto;
-  margin-bottom: 1em;
   border: 2px solid black;
 }
 
 .book {
   width: 100%;
   border-bottom: 2px solid black;
-  padding: 0.5em 0.25em;
+  padding: 0.25em 0.25em;
   font-size: 1.2em;
   display: flex;
   justify-content: space-between;
@@ -54,13 +106,25 @@ body {
   padding: 0.2rem;
 }
 
-form {
+.form-section {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+  display: none;
+}
+
+.form-section .form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: min-content;
+  width: 60%;
   margin: 0 auto;
+  padding: 2em 0;
   gap: 0.5em;
+}
+
+.form-section.active {
+  display: block;
 }
 
 input[type="text"] {
@@ -68,7 +132,48 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-  width: max-content;
+  width: 20%;
   padding: 0.5rem;
-  align-self: flex-end;
+  align-self: center;
+}
+
+.contact {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+  display: none;
+}
+
+.contact.active {
+  display: block;
+}
+
+.contact .contact-container {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact .contact-container ul {
+  width: 100%;
+  padding: 1em;
+  align-self: center;
+  list-style: none;
+}
+
+.contact .contact-container ul li {
+  padding: 0.5em 0;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.footer .container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0.5em 2em;
+  border: 1px solid rgba(0, 0, 0, 1);
 }
