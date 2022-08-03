@@ -36,7 +36,7 @@ body {
 
 .header-container .container--div ul li {
   padding: 0 1em;
-  border-right: 1px solid #aabbff;
+  border-right: 1px solid #abf;
 }
 
 .header-container .container--div ul li a {
@@ -61,10 +61,7 @@ body {
   display: block;
   width: 100%;
   padding: 2em;
-  display: block;
 }
-
-
 
 .container {
   width: 100%;
@@ -107,9 +104,11 @@ body {
   text-align: center;
   font-size: 1.5em;
 }
-.form-sectionActive{
+
+.form-sectionActive {
   display: block;
 }
+
 .form-section .form {
   display: flex;
   flex-direction: column;
@@ -137,7 +136,7 @@ input[type="submit"] {
   display: none;
 }
 
-.contactActive{
+.contactActive {
   display: block;
 }
 
@@ -147,14 +146,14 @@ input[type="submit"] {
   flex-direction: column;
 }
 
-.contact .contact-container ul {
+.contact .contact-container .contact-items {
   width: 100%;
   padding: 1em;
   align-self: center;
   list-style: none;
 }
 
-.contact .contact-container ul li {
+.contact .contact-container .contact-items .contact-item {
   padding: 0.5em 0;
 }
 
