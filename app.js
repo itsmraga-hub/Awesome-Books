@@ -99,3 +99,27 @@ navigatorLinks.forEach((element) => {
     }
   });
 });
+
+// const navLinks = document.querySelectorAll('.nav');
+// const listBooks = document.querySelector('.main-container');
+// const addNewForm = document.querySelector('.form-section');
+// const contactPage = document.querySelector('.contact');
+// const sections = [listBooks, addNewForm, contactPage];
+
+// navLinks.forEach((link, i) => {
+//   link.addEventListener('click', () => {
+//     if (i === 0) {
+//       sections[0].style.display = 'block';
+//       sections[1].style.display = 'none';
+//       sections[2].style.display = 'none';
+//     } else if (i === 1) {
+//       sections[0].style.display = 'none';
+//       sections[1].style.display = 'block';
+//       sections[2].style.display = 'none';
+//     } else if (i === 2) {
+//       sections[0].style.display = 'none';
+//       sections[1].style.display = 'none';
+//       sections[2].style.display = 'block';
+//     }
+//   });
+// });
