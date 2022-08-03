@@ -58,18 +58,13 @@ body {
 }
 
 .main-container {
+  display: block;
   width: 100%;
   padding: 2em;
   display: block;
 }
 
-.main-container.active {
-  display: block;
-}
 
-.active {
-  display: block;
-}
 
 .container {
   width: 100%;
@@ -107,12 +102,14 @@ body {
 }
 
 .form-section {
+  display: none;
   width: 100%;
   text-align: center;
   font-size: 1.5em;
-  display: none;
 }
-
+.form-sectionActive{
+  display: block;
+}
 .form-section .form {
   display: flex;
   flex-direction: column;
@@ -121,10 +118,6 @@ body {
   margin: 0 auto;
   padding: 2em 0;
   gap: 0.5em;
-}
-
-.form-section.active {
-  display: block;
 }
 
 input[type="text"] {
@@ -144,7 +137,7 @@ input[type="submit"] {
   display: none;
 }
 
-.contact.active {
+.contactActive{
   display: block;
 }
 

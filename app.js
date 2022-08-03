@@ -73,3 +73,29 @@ const time = new Date();
 date.innerHTML = time;
 
 // Get list items and containers to display at separate times
+// select displayed elements
+const mainContainer = document.querySelector('.main-container');
+const formSection =document.querySelector('.form-section');
+const contact = document.querySelector('.contact');
+// select nav links
+
+const navigatorLinks = document.querySelectorAll('.nav');
+console.log(navigatorLinks);
+// display functionality
+navigatorLinks.forEach(element =>{
+  element.addEventListener('click',()=>{
+    if(element.id == 'list'){
+      mainContainer.style.display ='block';
+      formSection.classList.remove('form-sectionActive');
+      contact.classList.remove('contactActive');
+    }else if(element.id == 'add'){
+      mainContainer.style.display = 'none';
+      formSection.classList.add('form-sectionActive');
+      contact.classList.remove('contactActive');
+    }else if(element.id == 'contact'){
+      mainContainer.style.display = 'none';
+      formSection.classList.remove('form-sectionActive');
+      contact.classList.add('contactActive');
+    }
+  })
+});
